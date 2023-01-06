@@ -1,35 +1,25 @@
+<script setup >
+import { a, b, aa, bb} from '@/setting'
+let message = $ref("123")
+function changeMsg() {
+  message = '内容'
+}
+
+const num = 1
+const count = computed(()=> num * 2 + 2)
+
+onMounted(()=>{
+  console.log('!!!');
+})
+</script>   
+
 <template>
   <div class="login">
-    子组件 {{dataBasic}}
-    <hr>
-    <strong>This is an Error for Demo Purposes</strong>
-    <slot></slot>
-    <br>
-    {{title}}
+    {{ message }} --- {{ count }}
+    <button @click="changeMsg">修改</button>
   </div>
 </template>
 
-<script setup name="Login">
-    import { ref,reactive } from 'vue';
+<style lang='scss' scoped>
 
-    const props = defineProps(["title"])
-
-    console.log(props.title);
-
-    const dataBasic = ref("张三")
-    const baseForm = reactive({
-        name:"zs",
-        age:15
-    })
-
-    defineExpose({
-        dataBasic,
-        baseForm
-    })
-</script>
-
-<style lang="scss" scoped>
-.login{
-    color:rgb(155, 79, 79)
-}
 </style>

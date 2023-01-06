@@ -1,5 +1,7 @@
 <template>
-    <router-view></router-view>
+    <NMessageProvider>
+        <router-view></router-view>
+    </NMessageProvider>
 </template>
   
 <script setup>
