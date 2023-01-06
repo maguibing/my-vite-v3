@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
+import { naive } from './naive-ui'
 import piniaPluginPersistedstate  from 'pinia-plugin-persistedstate'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -12,9 +13,6 @@ import 'normalize.css'
 import './style.css'
 // import 'uno.css'
 
-import {create, NButton, NSpace,NMessageProvider} from 'naive-ui'
-const naive = create({
-    components:[NButton,NSpace,NMessageProvider]
-})
+
 
 createApp(App).use(router).use(pinia).use(naive).mount('#app')

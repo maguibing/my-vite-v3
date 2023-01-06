@@ -3,7 +3,7 @@ import userPinia from '@/pages/userPinia'
 </script>
 <template>
   <div class="home">
-   <userPinia></userPinia>
+   <!-- <userPinia></userPinia> -->
   </div>
 </template>
 
