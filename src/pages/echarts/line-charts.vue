@@ -1,4 +1,5 @@
 <script setup>
+import { tr } from 'date-fns/locale';
 import * as echarts from 'echarts'
 
 
@@ -11,8 +12,47 @@ function initEchart() {
     title: {
       text: '实例1'
     },
-    tooltip: {},
+    tooltip: {
+      triggerOn: 'mousemove',
+      textStyle: {
+        color: 'pink',
+      }
+      // showDelay: 2000
+      // showContent: true
+    },
     xAxis: {
+      // gridIndex: 2,
+
+      name:"xAxis",
+      nameTextStyle: {
+        color: "red",
+        fontStyle: 'normal'
+      },
+      axisLine: {
+        show: true,
+        onZero: true,
+        symbol: ['none', 'arrow'],
+        symbolOffset: [0, 12]
+      },
+      axisTick:{
+        show: true
+      },
+      axisLabel:{
+        show: true
+      },
+      axisPointer:{
+        show: true,
+        type: 'line'
+      },
+      inverse:false,
+      // boundaryGap: ['30%','40%'],
+      // nameLocation: 'middle',
+      nameGap: 20,
+      nameRotate: 270,
+      show: true,
+      position: "bottom",
+      // offset: 20,
+      type:"category",
       data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
     },
     yAxis: {},
@@ -117,6 +157,8 @@ function initEchart2() {
 function handleResize() {
   // setTimeout(() => {
     // initEchartPie && initEchartPie.resize()
+
+    initeEchartPie && initEchartPie.resize()
   // }, 2000);
 }
 
@@ -134,13 +176,9 @@ onMounted(()=>{
 </script>
 <template>
   <div class="line-chart">
-    <n-space>
+    <!-- <n-space>
       <n-button type='error' @click='destory'>销毁实例1</n-button>
-      <n-button type='error' @click='destory'>销毁实例2</n-button>
-      <n-button type='error' @click='destory'>销毁实例3</n-button>
-      <n-button type='error' @click='destory'>销毁实例4</n-button>
-      <n-button type='error' @click='destory'>销毁实例5</n-button>
-    </n-space>
+    </n-space> -->
     <div id="main" style='width: 600px; height: 300px;'></div>
     <div id="main2" style='width: 600px; height: 300px;'></div>
   </div>

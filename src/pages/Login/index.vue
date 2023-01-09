@@ -1,5 +1,4 @@
 <script setup >
-import { a, b, aa, bb} from '@/setting'
 let message = $ref("123")
 function changeMsg() {
   message = '内容'
