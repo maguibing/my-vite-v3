@@ -1,4 +1,4 @@
-/* :root {
+:root {
   --primary-color: #316c72;
   --dark-bg: #18181c;
 }
@@ -21,4 +21,4 @@ body,
 
 html.dark {
   background: var(--dark-bg);
-} */
+}

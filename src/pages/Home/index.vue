@@ -1,6 +1,6 @@
 <script setup name="Home">
 // import userPinia from '@/pages/userPinia'
-import ButtonCounter from '~/src/components/button-counter.vue'
+import ButtonCounter from '@/components/button-counter.vue'
 import inputComponent from '@/components/input-cop.vue'
 // const { proxy } =  getCurrentInstance() // 获取全局api 相当于this
 import { getLovers } from '@/api/home'
@@ -20,14 +20,15 @@ onMounted(() => {
   })
 })
 
-function eventValidate() {
+function validateEvent() {
+
 }
 </script>
 
 <template>
   <div class="home">
     <!-- <userPinia></userPinia> -->
-    <ButtonCounter :count="count" @increment.once="count++" @decrement.once="count--" @event-validate="eventValidate" />
+    <ButtonCounter :count="count" @increment.once="count++" @decrement.once="count--" @event-validate="validateEvent" />
     <!-- <input-component v-model.number="count"></input-component> -->
     <!-- <echarts></echarts> -->
   </div>

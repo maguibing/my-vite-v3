@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="Login">
 let message = $ref('123')
 function changeMsg() {
   message = '内容'
@@ -8,6 +8,7 @@ const num = 1
 const count = computed(() => num * 2 + 2)
 
 onMounted(() => {
+
 })
 </script>
 

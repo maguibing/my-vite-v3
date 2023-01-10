@@ -2,8 +2,8 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
-// import unocss from 'unocss/vite'
-// import {presetAttributify, presetIcons, presetUno} from 'unocss'
+import Unocss from 'unocss/vite'
+import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
@@ -12,13 +12,13 @@ export default defineConfig({
       reactivityTransform: true,
     }),
     VueSetupExtend(),
-    // unocss({
-    //     presets:[
-    //         presetAttributify(),
-    //         presetIcons(),
-    //         presetUno()
-    //     ]
-    // }),
+    Unocss({
+      presets: [
+        presetAttributify(),
+        presetIcons(),
+        presetUno(),
+      ],
+    }),
     AutoImport({
       imports: ['vue', 'vue-router'],
       dts: 'src/auto-import.d.ts',

@@ -10,9 +10,10 @@ import '@/components'
 // 清除基础样式
 import 'normalize.css'
 import './style.css'
+
+import 'uno.css'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
-// import 'uno.css'
 
 const app = createApp(App)
 app.config.globalProperties.$axios = axios
