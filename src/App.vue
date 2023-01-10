@@ -1,5 +1,7 @@
 <template>
-    <NMessageProvider>
-        <router-view></router-view>
-    </NMessageProvider>
+  <NMessageProvider>
+    <router-view v-slot="{ Component }">
+      <component :is="Component" />
+    </router-view>
+  </NMessageProvider>
 </template>

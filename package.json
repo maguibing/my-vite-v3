@@ -1,39 +1,44 @@
 {
-	"name": "my-vite-v3",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite --mode development",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"@unocss/preset-attributify": "^0.48.0",
-		"@unocss/preset-icons": "^0.48.0",
-		"@unocss/preset-uno": "^0.48.0",
-		"@vueuse/core": "^9.6.0",
-		"axios": "^1.2.1",
-		"dayjs": "^1.11.7",
-		"echarts": "^5.4.1",
-		"lodash": "^4.17.21",
-		"lodash-es": "^4.17.21",
-		"naive-ui": "^2.34.2",
-		"normalize.css": "^8.0.1",
-		"pinia": "^2.0.23",
-		"pinia-plugin-persistedstate": "^3.0.1",
-		"sass": "^1.56.2",
-		"unocss": "^0.48.0",
-		"unplugin-auto-import": "^0.12.1",
-		"vfonts": "^0.0.3",
-		"vite-plugin-vue-setup-extend": "^0.4.0",
-		"vue": "^3.2.45",
-		"vue-router": "4"
-	},
-	"devDependencies": {
-		"@iconify/json": "^2.1.99",
-		"@iconify/vue": "^3.2.1",
-		"@vitejs/plugin-vue": "^4.0.0",
-		"vite": "^4.0.0"
-	}
+  "name": "my-vite-v3",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^0.34.1",
+    "@unocss/preset-attributify": "^0.48.0",
+    "@unocss/preset-icons": "^0.48.0",
+    "@unocss/preset-uno": "^0.48.0",
+    "@vueuse/core": "^9.6.0",
+    "axios": "^1.2.1",
+    "dayjs": "^1.11.7",
+    "echarts": "^5.4.1",
+    "eslint": "^8.31.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "naive-ui": "^2.34.2",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.23",
+    "pinia-plugin-persistedstate": "^3.0.1",
+    "sass": "^1.56.2",
+    "typescript": "^4.9.4",
+    "unocss": "^0.48.0",
+    "unplugin-auto-import": "^0.12.1",
+    "vfonts": "^0.0.3",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue": "^3.2.45",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.1.99",
+    "@iconify/vue": "^3.2.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
+  }
 }

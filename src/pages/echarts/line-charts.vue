@@ -1,87 +1,84 @@
 <script setup>
-import { tr } from 'date-fns/locale';
 import * as echarts from 'echarts'
-
-
 let initEchartPie = $ref('')
 let initEchartPie2 = $ref('')
 
 function initEchart() {
-  initEchartPie = echarts.init(document.getElementById('main')) 
+  initEchartPie = echarts.init(document.getElementById('main'))
   initEchartPie.setOption({
     title: {
-      text: '实例1'
+      text: '实例1',
     },
     tooltip: {
       triggerOn: 'mousemove',
       textStyle: {
         color: 'pink',
-      }
+      },
       // showDelay: 2000
       // showContent: true
     },
     xAxis: {
       // gridIndex: 2,
 
-      name:"xAxis",
+      name: 'xAxis',
       nameTextStyle: {
-        color: "red",
-        fontStyle: 'normal'
+        color: 'red',
+        fontStyle: 'normal',
       },
       axisLine: {
         show: true,
         onZero: true,
         symbol: ['none', 'arrow'],
-        symbolOffset: [0, 12]
+        symbolOffset: [0, 12],
       },
-      axisTick:{
-        show: true
-      },
-      axisLabel:{
-        show: true
-      },
-      axisPointer:{
+      axisTick: {
         show: true,
-        type: 'line'
       },
-      inverse:false,
+      axisLabel: {
+        show: true,
+      },
+      axisPointer: {
+        show: true,
+        type: 'line',
+      },
+      inverse: false,
       // boundaryGap: ['30%','40%'],
       // nameLocation: 'middle',
       nameGap: 20,
       nameRotate: 270,
       show: true,
-      position: "bottom",
+      position: 'bottom',
       // offset: 20,
-      type:"category",
-      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+      type: 'category',
+      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
     },
     yAxis: {},
     series: [
       {
         name: '销量',
         type: 'bar',
-        data: [5, 20, 36, 10, 10, 20]
-      }
-    ]
+        data: [5, 20, 36, 10, 10, 20],
+      },
+    ],
   })
 
   // window.addEventListener('resize', handleResize)
 }
 
 function initEchart2() {
-  initEchartPie2 = echarts.init(document.getElementById('main2')) 
+  initEchartPie2 = echarts.init(document.getElementById('main2'))
 
-  let option = {
+  const option = {
     tooltip: {
       trigger: 'axis',
-      axisPointer: { type: 'cross' }
+      axisPointer: { type: 'cross' },
     },
     legend: {},
     xAxis: [
       {
         type: 'category',
         axisTick: {
-          alignWithLabel: true
+          alignWithLabel: true,
         },
         data: [
           '1月',
@@ -95,9 +92,9 @@ function initEchart2() {
           '9月',
           '10月',
           '11月',
-          '12月'
-        ]
-      }
+          '12月',
+        ],
+      },
     ],
     yAxis: [
       {
@@ -108,8 +105,8 @@ function initEchart2() {
         max: 250,
         position: 'right',
         axisLabel: {
-          formatter: '{value} ml'
-        }
+          formatter: '{value} ml',
+        },
       },
       {
         type: 'value',
@@ -118,16 +115,16 @@ function initEchart2() {
         max: 25,
         position: 'left',
         axisLabel: {
-          formatter: '{value} °C'
-        }
-      }
+          formatter: '{value} °C',
+        },
+      },
     ],
     series: [
       {
         name: '降水量',
         type: 'bar',
         yAxisIndex: 0,
-        data: [6, 32, 70, 86, 68.7, 100.7, 125.6, 112.2, 78.7, 48.8, 36.0, 19.3]
+        data: [6, 32, 70, 86, 68.7, 100.7, 125.6, 112.2, 78.7, 48.8, 36.0, 19.3],
       },
       {
         name: '温度',
@@ -146,19 +143,19 @@ function initEchart2() {
           18.0,
           16.5,
           12.0,
-          5.2
-        ]
-      }
-    ]
-  };
+          5.2,
+        ],
+      },
+    ],
+  }
   initEchartPie2.setOption(option)
 }
 
 function handleResize() {
   // setTimeout(() => {
-    // initEchartPie && initEchartPie.resize()
+  // initEchartPie && initEchartPie.resize()
 
-    initeEchartPie && initEchartPie.resize()
+  initeEchartPie && initEchartPie.resize()
   // }, 2000);
 }
 
@@ -167,20 +164,19 @@ function destory() {
   initEchartPie.dispose()
 }
 
-
-onMounted(()=>{
-    initEchart()
-    initEchart2()
+onMounted(() => {
+  initEchart()
+  initEchart2()
 })
-
 </script>
+
 <template>
   <div class="line-chart">
     <!-- <n-space>
       <n-button type='error' @click='destory'>销毁实例1</n-button>
     </n-space> -->
-    <div id="main" style='width: 600px; height: 300px;'></div>
-    <div id="main2" style='width: 600px; height: 300px;'></div>
+    <div id="main" style="width: 600px; height: 300px;" />
+    <div id="main2" style="width: 600px; height: 300px;" />
   </div>
 </template>
 

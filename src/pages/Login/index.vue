@@ -1,21 +1,22 @@
-<script setup >
-let message = $ref("123")
+<script setup>
+let message = $ref('123')
 function changeMsg() {
   message = '内容'
 }
 
 const num = 1
-const count = computed(()=> num * 2 + 2)
+const count = computed(() => num * 2 + 2)
 
-onMounted(()=>{
-  console.log('!!!');
+onMounted(() => {
 })
-</script>   
+</script>
 
 <template>
   <div class="login">
     {{ message }} --- {{ count }}
-    <button @click="changeMsg">修改</button>
+    <button @click="changeMsg">
+      修改
+    </button>
   </div>
 </template>
 

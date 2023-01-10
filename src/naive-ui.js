@@ -1,15 +1,14 @@
 import {
-    create, 
-    NButton, 
-    NSpace,
-    NMessageProvider
+  NButton,
+  NMessageProvider,
+  NSpace,
+  create,
 } from 'naive-ui'
 
 export const naive = create({
-    components:[
-        NButton,
-        NSpace,
-        NMessageProvider
-    ]
+  components: [
+    NButton,
+    NSpace,
+    NMessageProvider,
+  ],
 })
-

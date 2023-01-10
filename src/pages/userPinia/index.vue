@@ -1,8 +1,8 @@
 <script setup>
-import {useStore} from '@/store'
-import { storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia'
 
-import {useMessage} from 'naive-ui'
+import { useMessage } from 'naive-ui'
+import { useStore } from '@/store'
 const message = useMessage()
 
 const store = useStore()
@@ -11,13 +11,14 @@ const store = useStore()
  */
 const { count, name } = storeToRefs(store)
 
-
 const increment = () => {
-  if(store.count>=10) return message.warning('当前大于10')
+  if (store.count >= 10)
+    return message.warning('当前大于10')
   store.count++
 }
 const decrement = () => {
-  if(store.count<=0) return message.warning('当前小于0')
+  if (store.count <= 0)
+    return message.warning('当前小于0')
   store.count--
 }
 /**
@@ -39,31 +40,37 @@ const decrement = () => {
 // store.name = 'lisi'
 // store.$patch({ name:"胡汉三", count: store.count = 10   // ?? 为什么不能直接使用 store.count++ })
 const changeName = () => {
-  store.$patch(state => {
+  store.$patch((state) => {
     state.count++
     state.name = '李四'
   })
 }
-
-
-
 </script>
+
 <template>
   <h3>usePinia</h3>
   <div>
-    数量：{{ count }}  姓名：{{ name }} 
+    数量：{{ count }}  姓名：{{ name }}
     可以直接访问 store的getters:
     {{ store.doublePlusOne }} -- {{ store.doublePlusTwo }} -- {{ store.doublePlusThree }} -- {{ store.allyPlusCount(100) }} -- {{ store.otherStorePlus }}
     <n-space>
-      <n-button type="success" @click="increment">增加</n-button>
-      <n-button type="error" @click="decrement">减少</n-button>
-      <n-button type="success" @click="changeName">修改姓名</n-button>
-      <n-button type="warning" @click="store.$reset()">重置</n-button>
-      <n-button type="warning" @click="store.sotreIncrement()">使用storeAction</n-button>
+      <n-button type="success" @click="increment">
+        增加
+      </n-button>
+      <n-button type="error" @click="decrement">
+        减少
+      </n-button>
+      <n-button type="success" @click="changeName">
+        修改姓名
+      </n-button>
+      <n-button type="warning" @click="store.$reset()">
+        重置
+      </n-button>
+      <n-button type="warning" @click="store.sotreIncrement()">
+        使用storeAction
+      </n-button>
     </n-space>
   </div>
-
-   
 </template>
 
 <style lang='scss' scoped>
