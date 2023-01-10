@@ -31,6 +31,18 @@ export default defineConfig({
         },
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
+    server: {
+        // https://blog.csdn.net/Linlietao0587/article/details/128392187  
+        proxy: {
+            '/path': {
+                target: "https://elf-deco.maibaapp.com",
+                changeOrigin: true,
+                // ws: true,
+                // secure: true 是否https接口
+                rewrite: (path) => path.replace(/^\/path/, '')
+            }
+        }
+    }
 })
 
 

@@ -11,8 +11,11 @@ pinia.use(piniaPluginPersistedstate)
 // 清除基础样式
 import 'normalize.css'
 import './style.css'
+import axios from 'axios'
 // import 'uno.css'
 
 
+const app  = createApp(App)
+app.config.globalProperties.$axios = axios
 
-createApp(App).use(router).use(pinia).use(naive).mount('#app')
+app.use(router).use(pinia).use(naive).mount('#app')
