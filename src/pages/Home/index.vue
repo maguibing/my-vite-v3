@@ -11,8 +11,8 @@ const count = $ref(0)
 onMounted(() => {
   // console.log(import.meta.env.VITE_APP_BASE_URL);
 
-  // proxy.$axios.get(`/path/content/wxapp/loversProfile/json/lovers-1.json`).then(res => {
-  //   console.log(res);
+  // proxy.$axios.get('/path/content/wxapp/loversProfile/json/lovers-1.json').then((res) => {
+
   // })
 
   getLovers().then((res) => {
